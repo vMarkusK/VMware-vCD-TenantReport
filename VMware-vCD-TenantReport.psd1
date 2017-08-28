@@ -12,7 +12,7 @@
 # RootModule = 'VMware-vCD-TenantReport.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '1.0.0'
+ModuleVersion = '1.0.1'
 
 # ID zur eindeutigen Kennzeichnung dieses Moduls
 GUID = '21a71eaa-d259-48c5-8482-643ba152af76'
@@ -64,8 +64,7 @@ Copyright = '(c) 2017 Markus Kraus. Alle Rechte vorbehalten.'
 
 # Die Module, die als geschachtelte Module des in "RootModule/ModuleToProcess" angegebenen Moduls importiert werden sollen.
 NestedModules = @( "modules/PowerStartHTML/PowerStartHTML.psd1",
-                   "functions/Get-VcdTenantReport.psm1",
-                   "functions/Test-IP.psm1" )
+                   "functions/Get-VcdTenantReport.psm1" )
 
 # Aus diesem Modul zu exportierende Funktionen
 FunctionsToExport = '*'

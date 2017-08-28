@@ -7,12 +7,13 @@ function Get-VcdTenantReport {
     Private Blog: mycloudrevolution.com
     ===========================================================================
     Changelog:
-    1.0 - Inital Release
+    1.0.0 - Inital Release
+    1.0.1 - Removed "Test-IP" Module
     ===========================================================================
     External Code Sources:
-    Examle Usage of BOOTSTRAP with POoerShell
+    Examle Usage of BOOTSTRAP with PowerShell
     https://github.com/tdewin/randomsamples/tree/master/powershell-veeamallstat
-    BOOTSTRAP with POoerShell
+    BOOTSTRAP with PowerShell
     https://github.com/tdewin/randomsamples/tree/master/powerstarthtml
     ===========================================================================
     Tested Against Environment:
@@ -71,28 +72,18 @@ param(
 Process {
 
     # Start Connection to vCD
-    try {
-        "Testing vCD Server ..."
-        Test-IP -IP $Server
-    }
-    catch {
-        throw "Testing '$Server' Failed!"
-    }
 
     if ($global:DefaultCIServers) {
         "Disconnecting vCD Server ..."
         $Trash = Disconnect-CIServer -Server * -Force:$true -Confirm:$false -ErrorAction SilentlyContinue
-        $True
     }
 
     "Connecting vCD Server ..."
     if ($Credential) {
         $Trash = Connect-CIServer -Server $Server -Org $Org -Credential $Credential -ErrorAction Stop
-        $True
     }
     else {
         $Trash = Connect-CIServer -Server $Server -Org $Org -ErrorAction Stop
-        $True
     }
     "Creating Report..."
 
