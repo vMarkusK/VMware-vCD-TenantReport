@@ -12,7 +12,7 @@
 # RootModule = 'VMware-vCD-TenantReport.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '1.0.1'
+ModuleVersion = '1.0.2'
 
 # ID zur eindeutigen Kennzeichnung dieses Moduls
 GUID = '21a71eaa-d259-48c5-8482-643ba152af76'

@@ -9,6 +9,7 @@ function Get-VcdTenantReport {
     Changelog:
     1.0.0 - Inital Release
     1.0.1 - Removed "Test-IP" Module
+    1.0.2 - More Detailed Console Log
     ===========================================================================
     External Code Sources:
     Examle Usage of BOOTSTRAP with PowerShell
@@ -74,18 +75,18 @@ Process {
     # Start Connection to vCD
 
     if ($global:DefaultCIServers) {
-        "Disconnecting vCD Server ..."
+        "$(Get-Date -Format "yyyy-MM-dd HH:mm:ss") - Disconnect existing vCD Server ..."
         $Trash = Disconnect-CIServer -Server * -Force:$true -Confirm:$false -ErrorAction SilentlyContinue
     }
 
-    "Connecting vCD Server ..."
+    "$(Get-Date -Format "yyyy-MM-dd HH:mm:ss") - Connect vCD Server ..."
     if ($Credential) {
         $Trash = Connect-CIServer -Server $Server -Org $Org -Credential $Credential -ErrorAction Stop
     }
     else {
         $Trash = Connect-CIServer -Server $Server -Org $Org -ErrorAction Stop
     }
-    "Creating Report..."
+    "$(Get-Date -Format "yyyy-MM-dd HH:mm:ss") - Create HTML Report..."
 
     # Init HTML Report
     $ps = New-PowerStartHTML -title "vCD Tenant Report"
@@ -102,7 +103,7 @@ Process {
 
     ## Add Header to Report
     $ps.Main().Add("div","jumbotron").N()
-    $ps.Append("h1","display-3",("vCD Tenant Report" -f $OrgVdcs.Count)).Append("p","lead","Organization User Count: {0}" -f $Users.Count).Append("p","lead","Organization Catalog Count: {0}" -f $Catalogs.Count).Append("p","lead","Organization VDC Count: {0}" -f $OrgVdcs.Count).Append("hr","my-4").Append("p","font-italic","This Report lists the most important objects in your vCD Environmet. For More Details Contact your Service Provider").N()
+    $ps.Append("h1","display-3",("vCD Tenant Report" -f $OrgVdcs.Count)).Append("p","lead","Organization User Count: {0}" -f $Users.Count).Append("p","lead","Organization Catalog Count: {0}" -f $Catalogs.Count).Append("p","lead","Organization VDC Count: {0}" -f $OrgVdcs.Count).Append("hr","my-4").Append("p","font-italic","This Report lists the most important objects in your vCD Environmet. For more details contact your Service Provider").N()
 
     ## add Org Users to Report
     $ps.Main().Append("h2",$null,"Org Users").N()
@@ -243,6 +244,7 @@ Process {
     }
     $ps.save($Path)
 
+    "$(Get-Date -Format "yyyy-MM-dd HH:mm:ss") - Open HTML Report..."
     Start-Process $Path
 
 }

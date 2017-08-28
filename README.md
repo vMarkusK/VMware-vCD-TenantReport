@@ -9,16 +9,19 @@ Markus Kraus [@vMarkus_K](https://twitter.com/vMarkus_K)
 
 MY CLOUD-(R)EVOLUTION [mycloudrevolution.com](http://mycloudrevolution.com/)
 
-## Project WebSite: 
+## Project WebSite:
 
 [mycloudrevolution.com](http://mycloudrevolution.com/)
 
-## Project Documentation: 
+## Project Documentation:
 
 [Read the Docs](http://readthedocs.io/)
 
 ## Project Description:
 
-The 'VMware-vCD-TenantReport' PowerShell Module ...
+The 'VMware-vCD-TenantReport' PowerShell Module creates with the Fuction 'Get-VcdTenantReport' a HTML Report of your vCloud Director Objects.
+
+![Get-VcdTenantReport](/media/Get-VcdTenantReport.png)
+
 
 
