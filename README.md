@@ -23,5 +23,8 @@ The 'VMware-vCD-TenantReport' PowerShell Module creates with the Fuction 'Get-Vc
 
 ![Get-VcdTenantReport](/media/Get-VcdTenantReport.png)
 
+Big thanks to [Timothy Dewin](https://twitter.com/tdewin) for his great [PowerStartHTML](https://github.com/tdewin/randomsamples/tree/master/powerstarthtml) PowerShell Module which is used to generate the Report for this Module.
+
+
 
 
