@@ -109,9 +109,9 @@ Process {
     $ps.Main().Append("h2",$null,"Org Users").N()
 
     $ps.Add('table','table').Add("tr","bgtitle text-white").Append("th",$null,"User Name").Append("th",$null,"Locked").Append("th",$null,"DeployedVMCount").Append("th",$null,"StoredVMCount").N()
-    $ps.Add("tr").N()
 
     foreach ($User in $Users) {
+        $ps.Add("tr").N()
         $ps.Append("td",$null,$User.Name).N()
         $ps.Append("td",$null,$User.Locked).N()
         $ps.Append("td",$null,$User.DeployedVMCount).N()
